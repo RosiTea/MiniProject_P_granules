@@ -1,0 +1,127 @@
+
+start_surface grad1
+    #polygon both edge
+    action all both transmit
+    action MEX5 both reflect
+    action MEX5 both reflect 
+    #color both black 0
+    panel disk -5 0 0 15 1 0 0 20
+end_surface
+
+start_surface grad2
+    #polygon both edge
+    action all both transmit
+    action MEX5 both reflect
+    action MEX5 both reflect 
+    #color both black 0
+    panel disk 0 0 0 15 1 0 0 20
+end_surface
+
+start_surface grad4
+    #polygon both edge
+    action all both transmit
+    action MEX5 both reflect
+    action MEX5 both reflect 
+    #color both black 0
+    panel disk 10 0 0 15 1 0 0 20
+end_surface
+
+start_surface grad5
+    #polygon both edge
+    action all both transmit
+    action MEX5 both reflect
+    action MEX5 both reflect 
+    #color both black 0
+    panel disk 15 0 0 15 1 0 0 20
+end_surface
+
+start_surface grad6
+    #polygon both edge
+    action all both transmit
+    action MEX5 both reflect
+    action MEX5 both reflect 
+    #color both black 0
+    panel disk 20 0 0 15 1 0 0 20
+end_surface
+
+start_surface grad7
+    #polygon both edge
+    action all both transmit
+    action MEX5 both reflect
+    action MEX5 both reflect 
+    #color both black 0
+    panel disk 25 0 0 15 1 0 0 20
+end_surface
+
+
+start_compartment comp1
+    surface cellmembrane
+    surface grad1
+    point -10 0 0
+end_compartment
+
+start_compartment comp2
+    surface grad2
+    surface grad1
+    surface cellmembrane
+    point -2 0 0
+end_compartment
+
+start_compartment comp3
+    surface grad2
+    surface anteriordivider
+    surface cellmembrane
+    point 2 0 0
+end_compartment
+
+start_compartment comp4
+    surface anteriordivider
+    surface grad4
+    surface cellmembrane
+    point 7 0 0
+end_compartment
+
+start_compartment comp5
+    surface grad4
+    surface grad5
+    surface cellmembrane
+    point 13 0 0
+end_compartment
+
+start_compartment comp6
+    surface grad5
+    surface grad6
+    surface cellmembrane
+    point 17 0 0
+end_compartment
+
+start_compartment comp7
+    surface grad6
+    surface grad7
+    surface cellmembrane
+    point 22 0 0
+end_compartment
+
+start_compartment comp8
+    surface grad7
+    surface cellmembrane
+    point 30 0 0
+end_compartment
+
+#want 14290 molecules in the cell
+
+compartment_mol 2469 MEX5 comp8
+compartment_mol 2130 MEX5 comp7
+compartment_mol 2041 MEX5 comp6
+compartment_mol 1871 MEX5 comp5
+compartment_mol 1701 MEX5 comp4
+compartment_mol 1531 MEX5 comp3
+compartment_mol 1311 MEX5 comp2
+compartment_mol 1235 MEX5 comp1
+
+#835.038 /um^3 MEX5 conc overall, 0.52 grad
+#185.564 max conc, 92.782 min conc -> 106.0366 -> 119.29 -> 132.55 -> 145.8  -> 159.055 ->
+#172.309 -> 185.564 
+
+
+end_file
